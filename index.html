@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portafolio |JHEFERSON MEYER PAUCAR HERRERA</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;  
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#050816;
+    --card:rgba(15,23,42,.65);
+    --cyan:#00f7ff;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --white:#f8fafc;
+    --gray:#94a3b8;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= FONDO ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00e5ff;
+    filter:blur(180px);
+    opacity:.08;
+    top:-150px;
+    left:-150px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#8b5cf6;
+    filter:blur(180px);
+    opacity:.08;
+    right:-150px;
+    bottom:-150px;
+    z-index:-2;
+}
+
+/* PARTICULAS */
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#00f7ff;
+    border-radius:50%;
+    box-shadow:0 0 10px #00f7ff;
+    animation:flotar linear infinite;
+}
+
+@keyframes flotar{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* ================= NAV ================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 5%;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(5,8,22,.65);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    color:white;
+}
+
+.logo span{
+    color:var(--cyan);
+    text-shadow:0 0 15px var(--cyan);
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.menu a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--cyan);
+    text-shadow:0 0 10px var(--cyan);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+#inicio{
+    min-height:100vh;
+    max-width:1200px;
+    margin:auto;
+
+    padding:150px 30px 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.mini{
+    display:inline-block;
+    color:var(--cyan);
+    background:rgba(0,247,255,.07);
+    border:1px solid rgba(0,247,255,.25);
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero-text h1{
+    font-size:clamp(45px,7vw,82px);
+    line-height:1.05;
+    font-weight:800;
+}
+
+.hero-text h1 span{
+    background:linear-gradient(
+        90deg,
+        #00f7ff,
+        #8b5cf6,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-text h2{
+    margin-top:15px;
+    color:#cbd5e1;
+    font-size:25px;
+}
+
+.hero-text p{
+    color:var(--gray);
+    max-width:650px;
+    margin:20px 0 30px;
+    font-size:16px;
+}
+
+/* BOTONES */
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 24px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    color:#001014;
+    background:var(--cyan);
+    box-shadow:0 0 25px rgba(0,247,255,.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 40px rgba(0,247,255,.7);
+}
+
+.btn-outline{
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.btn-outline:hover{
+    border-color:var(--cyan);
+    color:var(--cyan);
+    transform:translateY(-4px);
+}
+
+/* ================= FOTO ================= */
+
+.profile{
+    width:360px;
+    height:360px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.profile::before{
+    content:"";
+    position:absolute;
+    inset:-10px;
+    border-radius:50%;
+
+    background:conic-gradient(
+        #00f7ff,
+        #8b5cf6,
+        #ec4899,
+        #00f7ff
+    );
+
+    animation:rotar 5s linear infinite;
+    filter:blur(2px);
+}
+
+.profile::after{
+    content:"";
+    position:absolute;
+    inset:-30px;
+    border-radius:50%;
+    border:1px solid rgba(0,247,255,.25);
+    animation:pulso 3s infinite;
+}
+
+@keyframes rotar{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes pulso{
+    0%,100%{
+        transform:scale(1);
+        opacity:.4;
+    }
+
+    50%{
+        transform:scale(1.08);
+        opacity:0;
+    }
+}
+
+.profile img{
+    width:340px;
+    height:340px;
+    object-fit:cover;
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+    border:8px solid #070b19;
+}
+
+/* ================= SECCIONES ================= */
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:110px 30px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title small{
+    color:var(--cyan);
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:8px;
+}
+
+.section-title h2 span{
+    color:var(--cyan);
+}
+
+.section-title p{
+    color:var(--gray);
+    margin-top:8px;
+}
+
+/* ================= SOBRE MI ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.glass{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:35px;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.04),
+        0 20px 50px rgba(0,0,0,.15);
+}
+
+.about p{
+    color:var(--gray);
+    margin-bottom:15px;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.info div{
+    padding:18px;
+    border-radius:12px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.info strong{
+    display:block;
+    color:var(--cyan);
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+/* ================= HABILIDADES ================= */
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.skill{
+    padding:25px;
+    border-radius:15px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.skill-top span:last-child{
+    color:var(--cyan);
+}
+
+.bar{
+    height:8px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--purple)
+    );
+
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,247,255,.4);
+}
+
+/* ================= PROYECTOS ================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    border-color:rgba(0,247,255,.5);
+    box-shadow:0 20px 50px rgba(0,247,255,.1);
+}
+
+.project-img{
+    height:190px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,247,255,.15),
+            transparent 60%
+        ),
+        #0b1120;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.tags{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.tags span{
+    font-size:11px;
+    color:var(--cyan);
+    padding:5px 9px;
+    border-radius:6px;
+    background:rgba(0,247,255,.07);
+}
+
+/* ================= SERVICIOS ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    text-align:center;
+    padding:40px 25px;
+    border-radius:20px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.07);
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:var(--cyan);
+}
+
+.service-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    margin-bottom:10px;
+}
+
+.service p{
+    color:var(--gray);
+    font-size:14px;
+}
+
+/* ================= CONTACTO ================= */
+
+.contact{
+    max-width:750px;
+    margin:auto;
+}
+
+.form{
+    display:grid;
+    gap:15px;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    background:rgba(15,23,42,.8);
+    border:1px solid rgba(255,255,255,.1);
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    outline:none;
+    font-family:inherit;
+}
+
+.form input:focus,
+.form textarea:focus{
+    border-color:var(--cyan);
+    box-shadow:0 0 15px rgba(0,247,255,.1);
+}
+
+.form textarea{
+    height:160px;
+    resize:none;
+}
+
+/* ================= REDES ================= */
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
+}
+
+.social a:hover{
+    color:#001014;
+    background:var(--cyan);
+    box-shadow:0 0 20px var(--cyan);
+    transform:translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:var(--gray);
+}
+
+footer span{
+    color:var(--cyan);
+}
+
+/* ================= ANIMACIONES ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:5%;
+        right:5%;
+
+        padding:25px;
+
+        flex-direction:column;
+        text-align:center;
+
+        background:#080d1d;
+        border-radius:15px;
+        border:1px solid rgba(255,255,255,.1);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    #inicio{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:150px;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile{
+        width:270px;
+        height:270px;
+    }
+
+    .profile img{
+        width:250px;
+        height:250px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:80px 20px;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .hero-text h2{
+        font-size:20px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PARTICULAS -->
+<div id="particles"></div>
+
+
+<!-- ================= NAV ================= -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+Mi<span>PORTAFOLIO</span>
+</div>
+
+<div class="menu-btn" onclick="menu()">
+☰
+</div>
+
+<ul class="menu" id="menu">
+
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#sobre-mi">Sobre mí</a></li>
+<li><a href="#habilidades">Habilidades</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- ================= INICIO ================= -->
+
+<section id="inicio">
+
+<div class="hero-text reveal">
+
+<div class="mini">
+● DISPONIBLE PARA PROYECTOS
+</div>
+
+<h1>
+Hola, soy<br>
+<span>JHEFERSON</span>
+</h1>
+
+<h2>
+Desarrollador Web 🚀
+</h2>
+
+<p>
+Creo experiencias digitales modernas, rápidas y atractivas.
+Me gusta convertir ideas en páginas web increíbles.
+</p>
+
+<div class="buttons">
+
+<a href="#proyectos" class="btn btn-primary">
+Ver proyectos →
+</a>
+
+<a href="#contacto" class="btn btn-outline">
+Contáctame
+</a>
+
+</div>
+
+</div>
+
+
+<div class="profile reveal">
+
+<img
+src="IMAGENES/YO.jpeg"
+alt="Foto de perfil"
+>
+
+</div>
+
+</section>
+
+
+<!-- ================= SOBRE MI ================= -->
+
+<section id="sobre-mi">
+
+<div class="section-title reveal">
+
+<small>SOBRE MÍ</small>
+
+<h2>
+Conoce <span>mi historia</span>
+</h2>
+
+<p>
+Un poco sobre quién soy y lo que hago.
+</p>
+
+</div>
+
+
+<div class="about">
+
+<div class="glass reveal">
+
+<p>
+Soy un apasionado del desarrollo web y la tecnología.
+Me gusta crear proyectos modernos que combinen diseño,
+funcionalidad y una buena experiencia para el usuario.
+</p>
+
+<p>
+Siempre estoy aprendiendo nuevas herramientas y buscando
+nuevos retos para mejorar mis habilidades.
+</p>
+
+</div>
+
+
+<div class="glass info reveal">
+
+<div>
+<strong>NOMBRE</strong>
+JHEFERSON MEYER PAUCAR HERRERA
+</div>
+
+<div>
+<strong>EDAD</strong>
+19 años
+</div>
+
+<div>
+<strong>UBICACIÓN</strong>
+Perú/Cerro de Pasco
+</div>
+
+<div>
+<strong>ESPECIALIDAD</strong>
+Desarrollo Web
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HABILIDADES ================= -->
+
+<section id="habilidades">
+
+<div class="section-title reveal">
+
+<small>SKILLS</small>
+
+<h2>
+Mis <span>habilidades</span>
+</h2>
+
+<p>
+Tecnologías y herramientas que utilizo.
+</p>
+
+</div>
+
+
+<div class="skills">
+
+<div class="skill reveal">
+
+<div class="skill-top">
+<span>HTML</span>
+<span>95%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:95%"></div>
+</div>
+
+</div>
+
+
+<div class="skill reveal">
+
+<div class="skill-top">
+<span>CSS</span>
+<span>90%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:90%"></div>
+</div>
+
+</div>
+
+
+<div class="skill reveal">
+
+<div class="skill-top">
+<span>JavaScript</span>
+<span>80%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:80%"></div>
+</div>
+
+</div>
+
+
+<div class="skill reveal">
+
+<div class="skill-top">
+<span>Git / GitHub</span>
+<span>85%</span>
+</div>
+
+<div class="bar">
+<div class="progress" style="width:85%"></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROYECTOS ================= -->
+
+<section id="proyectos">
+
+<div class="section-title reveal">
+
+<small>PORTAFOLIO</small>
+
+<h2>
+Mis <span>proyectos</span>
+</h2>
+
+<p>
+Algunos proyectos que he realizado.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<div class="project reveal">
+<div class="project-img video-container">
+
+    <video
+    src="IMAGENES/VIDEO.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    width="350"
+    height="1000">
+</video>
+        
+
+</div>
+
+
+<div class="project-content">
+
+<h3>Landing Page</h3>
+<h2>
+    Soy <span id="textoAnimado"></span>
+</h2>
+
+</a>
+
+<p>
+Página web moderna de portafolio institucional 
+o personal.
+</p>
+
+<div class="tags">
+<span>HTML<     /span>
+<span>CSS</span>
+<span>JS</span>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="project reveal">
+
+<div class="project-img video-container">
+<video
+    src="IMAGENES/VIDEO 1.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    width="350"
+    height="1000">
+</div>
+
+<div class="project-content">
+
+<h3>Tienda Online</h3>
+
+<p>
+Diseño de una tienda virtual moderna y adaptable
+para dispositivos móviles.
+</p>
+
+<div class="tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICIOS ================= -->
+
+<section id="servicios">
+
+<div class="section-title reveal">
+
+<small>SERVICIOS</small>
+
+<h2>
+¿Qué puedo <span>hacer?</span>
+</h2>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service reveal">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>Diseño Web</h3>
+
+<p>
+Diseños modernos, elegantes y adaptados
+a celulares, tablets y computadoras.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-icon">
+💻
+</div>
+
+<h3>Desarrollo Web</h3>
+
+<p>
+Creación de páginas web funcionales,
+rápidas y profesionales.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-icon">
+⚡
+</div>
+
+<h3>Optimización</h3>
+
+<p>
+Mejora del rendimiento, diseño y
+experiencia de usuario.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACTO ================= -->
+
+<section id="contacto">
+
+<div class="section-title reveal">
+
+<small>CONTACTO</small>
+
+<h2>
+¿Hacemos algo <span>increíble?</span>
+</h2>
+
+<p>
+Envíame un mensaje y conversemos.
+</p>
+
+</div>
+
+
+<div class="contact glass reveal">
+
+<form class="form" onsubmit="enviar(event)">
+
+<input
+type="text"
+placeholder="Tu nombre"
+required
+>
+
+<input
+type="email"
+placeholder="Tu correo"
+required
+>
+
+<textarea
+placeholder="Cuéntame sobre tu proyecto..."
+required
+></textarea>
+
+<button class="btn btn-primary">
+Enviar mensaje 🚀
+</button>
+
+</form>
+
+
+<div class="social">
+
+<a href="#" title="GitHub">GH</a>
+
+<a href="#" title="Instagram">IG</a>
+
+<a href="#" title="Facebook">FB</a>
+
+<a href="#" title="LinkedIn">IN</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 <span>JHEFERSON MEYER PAUCAR HERRERA</span> — Todos los derechos reservados.
+</p>
+
+</footer>
+
+
+<script>
+
+/* ================= MENU ================= */
+
+function menu(){
+
+document
+.getElementById("menu")
+.classList.toggle("active");
+
+}
+
+
+/* ================= PARTICULAS ================= */
+
+const particles =
+document.getElementById("particles");
+
+for(let i=0;i<80;i++){
+
+const p=document.createElement("div");
+
+p.classList.add("particle");
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDuration=
+(5+Math.random()*10)+"s";
+
+p.style.animationDelay=
+Math.random()*10+"s";
+
+p.style.opacity=
+Math.random();
+
+particles.appendChild(p);
+
+}
+
+
+/* ================= SCROLL ANIMATION ================= */
+
+const reveals=
+document.querySelectorAll(".reveal");
+
+function reveal(){
+
+reveals.forEach(el=>{
+
+const top=
+el.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+
+el.classList.add("show");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+/* ================= FORMULARIO ================= */
+
+function enviar(e){
+
+e.preventDefault();
+
+alert(
+"🚀 ¡Mensaje enviado correctamente! Gracias por contactarme."
+);
+
+e.target.reset();
+
+}
+
+
+/* ================= CERRAR MENU ================= */
+
+document.querySelectorAll(".menu a")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document
+.getElementById("menu")
+.classList.remove("active");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
